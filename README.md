@@ -16,30 +16,7 @@ import Button from 'react-native-cz-button';
 /> 
 ```
 
-###  2.方法说明:
-```
-/*
-* 赋值当前视图对象
-* */
-evaluateView
-```
-
-```
-/*
-* 按钮点击事件
-* */
-onPress
-```
-
-```
-/*
-* 修改按钮显示状态
-* status: 1.可点击状态 2.不可点击状态
-* */
-this.button.modifyLockOpenStatus(1)
-```
-
-###  3.属性说明:
+###  2.属性:
 ```
 type: 按钮类型: 1.实心按钮 2.空心按钮
 ```
@@ -54,4 +31,28 @@ mainStyle: 总视图样式: {marginLeft: 30, marginRight: 20, borderRadius: 30}
 ```
 ```
 textStyle: 文本样式: {fontSize: 16}
+```
+
+###  3.属性方法:
+```
+/*
+* 赋值当前视图对象
+* */
+evaluateView
+```
+
+```
+/*
+* 按钮点击事件
+* */
+onPress
+```
+
+###  4.供外部调用的方法:
+```
+/*
+* 修改按钮显示状态
+* status: 1.可点击状态 2.不可点击状态
+* */
+this.button.modifyLockOpenStatus(1)
 ```
