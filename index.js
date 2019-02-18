@@ -6,9 +6,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 * type: 按钮类型: 1.实心按钮 2.空心按钮
 * lock: 如果为true，点击后置为不可点击状态，不会再调用onPress；反之。默认为false
 * text: 文本信息，默认空串
-* mainStyle: 总视图样式
-* textStyle: 文本样式
-* 
+* mainStyle: 总视图样式: {marginLeft: 30, marginRight: 20, borderRadius: 30}
+* textStyle: 文本样式: {fontSize: 16}
+*
 * func:
 * evaluateView: 赋值当前视图对象
 * onPress: 点击按钮事件
@@ -43,13 +43,13 @@ export default class CZButton extends Component{
     /************************** 外部调用方法 **************************/
     /*
     * 修改按钮显示状态
-    * status: 1.不可点击状态 2.可点击状态
+    * status: 1.可点击状态 2.不可点击状态
     * */
     modifyLockOpenStatus = (status = 1) => {
         if (status == 1) {
-            this.isLocked = true;
-        } else {
             this.isLocked = false;
+        } else {
+            this.isLocked = true;
         }
         this.forceUpdate();
     }
@@ -62,8 +62,8 @@ export default class CZButton extends Component{
         //只有未锁且有按钮事件才可点击
         if (!this.isLocked && this.props.onPress) {
             if (this.props.lock) {
-                this.forceUpdate();
                 this.isLocked = true;
+                this.forceUpdate();
             }
             this.props.onPress();
         }

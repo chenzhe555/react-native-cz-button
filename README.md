@@ -31,6 +31,14 @@ evaluateView
 onPress
 ```
 
+```
+/*
+* 修改按钮显示状态
+* status: 1.可点击状态 2.不可点击状态
+* */
+this.button.modifyLockOpenStatus(1)
+```
+
 ###  3.属性说明:
 ```
 type: 按钮类型: 1.实心按钮 2.空心按钮
