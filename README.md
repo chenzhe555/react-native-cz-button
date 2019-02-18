@@ -1,45 +1,49 @@
+## Manual installation
 
-# react-native-cz-button
-
-## Getting started
-
-`$ npm install react-native-cz-button --save`
-
-### Mostly automatic installation
-
-`$ react-native link react-native-cz-button`
-
-### Manual installation
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-cz-button` and add `RNCzButton.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNCzButton.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.chenzhe.button.RNCzButtonPackage;` to the imports at the top of the file
-  - Add `new RNCzButtonPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-cz-button'
-  	project(':react-native-cz-button').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-cz-button/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-cz-button')
-  	```
+npm install react-native-cz-button --save
 
 
 ## Usage
-```javascript
-import RNCzButton from 'react-native-cz-button';
-
-// TODO: What to do with the module?
-RNCzButton;
+###  1.引入组件
 ```
-  
+import Button from 'react-native-cz-button';
+
+<Button
+    evaluateView={ (button) => {this.button = button}}
+    type={1} 
+    text={'按钮测试'} 
+    onPress={this._onPress}
+/> 
+```
+
+###  2.方法说明:
+```
+/*
+* 赋值当前视图对象
+* */
+evaluateView
+```
+
+```
+/*
+* 按钮点击事件
+* */
+onPress
+```
+
+###  3.属性说明:
+```
+type: 按钮类型: 1.实心按钮 2.空心按钮
+```
+```
+lock: 如果为true，点击后置为不可点击状态，不会再调用onPress；反之。默认为false
+```
+```
+text: 文本信息，默认空串
+```
+```
+mainStyle: 总视图样式: {marginLeft: 30, marginRight: 20, borderRadius: 30}
+```
+```
+textStyle: 文本样式: {fontSize: 16}
+```
