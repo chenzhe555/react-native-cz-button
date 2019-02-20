@@ -8,10 +8,15 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 * text: 文本信息，默认空串
 * mainStyle: 总视图样式: {marginLeft: 30, marginRight: 20, borderRadius: 30}
 * textStyle: 文本样式: {fontSize: 16}
+* aKey: 当前按钮对应的Key
+* params: 按钮对应的参数，可用于埋点
 *
 * func:
 * evaluateView: 赋值当前视图对象
 * onPress: 点击按钮事件
+*
+* export func:
+* global.buttonCommonFunc: 全局定义此方法，所以按钮触发事件之前都会调用，可以对按钮做统一处理
 * */
 export default class CZButton extends Component{
 
@@ -65,6 +70,8 @@ export default class CZButton extends Component{
                 this.isLocked = true;
                 this.forceUpdate();
             }
+            //针对按钮埋点事件做的特殊处理
+            if (global.buttonCommonFunc) global.buttonCommonFunc(this.props.aKey ? this.props.aKey : '', this.props.params ? this.props.params : null);
             this.props.onPress();
         }
     }
