@@ -1,6 +1,6 @@
 {
   "name": "react-native-cz-button",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "RN Button 组件",
   "main": "index.js",
   "scripts": {
